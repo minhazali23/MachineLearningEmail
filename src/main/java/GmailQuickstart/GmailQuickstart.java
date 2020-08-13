@@ -2,6 +2,8 @@ package GmailQuickstart;
 //testing import
 import com.google.api.client.repackaged.org.apache.commons.codec.binary.Base64;
 import com.google.api.client.repackaged.org.apache.commons.codec.binary.StringUtils;
+import java.io.File;
+import java.io.FileWriter;
 //testing import
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
@@ -64,6 +66,9 @@ public class GmailQuickstart {
     public static void main(String... args) throws IOException, GeneralSecurityException {
         HashMap<String,String> test = extractMessagesPerPage();
         System.out.print(test);
+        FileWriter myWriter = new FileWriter("jjsontest.txt");
+        myWriter.write(String.valueOf(test));
+        myWriter.close();
     }
 
     private static void getMessageListSize(ListMessagesResponse size){
