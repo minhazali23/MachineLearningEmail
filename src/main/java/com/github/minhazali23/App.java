@@ -1,13 +1,15 @@
 package com.github.minhazali23;
-import GmailQuickstart.GmailQuickstart;
+import EmailService.EmailServiceOrchestrator;
+
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 
 
 public class App
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-        GmailQuickstart credit = new GmailQuickstart();
+    public static void main( String[] args ) throws GeneralSecurityException, IOException {
+        EmailServiceOrchestrator newServiceInstance = new EmailServiceOrchestrator();
+        newServiceInstance.startGmailService();
     }
 
 
